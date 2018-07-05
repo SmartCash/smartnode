@@ -3,11 +3,6 @@
 # Installs smartnode on Ubuntu 16.04 LTS x64
 # ATTENTION: The anti-ddos part will disable http, https and dns ports.
 
-if [ "$(whoami)" != "root" ]; then
-  echo "Script must be run as user: root"
-  exit -1
-fi
-
 while true; do
  if [ -d ~/.smartcash ]; then
    printf "~/.smartcash/ already exists! The installer will delete this folder. Continue anyway?(Y/n)"
@@ -64,7 +59,7 @@ touch ~/.smartcash/smartcash.conf
 cd ~/.smartcash/
 
 # download bootstrap
-apt-get install unzip -y
+sudo apt-get install unzip -y
 # wget https://smartcash.cc/txindexstrap.zip
 # unzip txindexstrap.zip
 # rm txindexstrap.zip
@@ -84,9 +79,11 @@ smartnodeprivkey=${_nodePrivateKey}
 cd
 
 # Install smartcashd using apt-get
-apt-get update -y
-apt-get install software-properties-common -y
-add-apt-repository ppa:smartcash/ppa -y && apt update -y && apt install smartcashd -y && smartcashd
+sudo apt-get update -y
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:smartcash/ppa -y
+sudo apt update -y
+sudo apt-get install smartcashd -y && smartcashd
 
 # Create a directory for smartnode's cronjobs and the anti-ddos script
 rm -r smartnode
@@ -133,18 +130,18 @@ chmod 0700 ./upgrade.sh
 chmod 0700 ./clearlog.sh
 
 # Change the SSH port
-sed -i "s/[#]\{0,1\}[ ]\{0,1\}Port [0-9]\{2,\}/Port ${_sshPortNumber}/g" /etc/ssh/sshd_config
+sudo sed -i "s/[#]\{0,1\}[ ]\{0,1\}Port [0-9]\{2,\}/Port ${_sshPortNumber}/g" /etc/ssh/sshd_config
 
 # Firewall security measures
-apt install ufw -y
-ufw disable
-ufw allow 9678
-ufw allow "$_sshPortNumber"/tcp
-ufw limit "$_sshPortNumber"/tcp
-ufw logging on
-ufw default deny incoming
-ufw default allow outgoing
-ufw --force enable
+sudo apt-get install ufw -y
+sudo ufw disable
+sudo ufw allow 9678
+sudo ufw allow "$_sshPortNumber"/tcp
+sudo ufw limit "$_sshPortNumber"/tcp
+sudo ufw logging on
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw --force enable
 
 # Reboot the server
-reboot
+sudo reboot
