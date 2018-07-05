@@ -3,6 +3,11 @@
 # Installs smartnode on Ubuntu 16.04 LTS x64
 # ATTENTION: The anti-ddos part will disable http, https and dns ports.
 
+if [ "$(whoami)" == "root" ]; then		
+    echo "Script must be run as non root."		
+    exit -1		
+fi		
+
 while true; do
  if [ -d ~/.smartcash ]; then
    printf "~/.smartcash/ already exists! The installer will delete this folder. Continue anyway?(Y/n)"

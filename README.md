@@ -7,7 +7,7 @@
 3. Make sure smartcash is always up-to-date: `upgrade.sh`
 4. Clear the log file every other day: `clearlog.sh`
 
-#### Login to your vps as root, download the install.sh file and then run it:
+#### Login to your vps as normal user with sudo rights (not root), download the install.sh file and then run it:
 ```
 wget https://rawgit.com/smartcash/smartnode/master/install.sh
 bash ./install.sh
