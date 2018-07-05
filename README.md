@@ -13,6 +13,8 @@ wget https://rawgit.com/smartcash/smartnode/master/install.sh
 bash ./install.sh
 ```
 
+### (Optional) Remove sudo rights from user
+
 #### On the client-side, add the following line to smartnode.conf:
 ```
 node-alias vps-ip:9678	node-key collateral-txid vout
