@@ -1,5 +1,6 @@
 # SmartNode
-### Bash installer for smartnode on Ubuntu 16.04 LTS x64
+### Bash installer for smartnode on:
+Ubuntu 16.04 LTS x64, Ubuntu 17.10 x64, Ubuntu 18.04 LTS x64
 
 #### This shell script comes with 4 cronjobs: 
 1. Make sure the daemon is always running: `makerun.sh`
