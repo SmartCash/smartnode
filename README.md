@@ -1,4 +1,11 @@
 # SmartNode
+
+## pre-requeriments
+#### software-properties-common;
+*( Depends: python3:any, python3, python3-gi, gir1.2-glib-2.0, python-apt-common, python3-dbus, python3-software-properties, ca-certificates )* 
+#### [smartcashd](https://launchpad.net/~smartcash/+archive/ubuntu/ppa)
+*( Depends: db4.8, smartcash )*
+
 ### Bash installer for smartnode on Ubuntu 16.04 LTS x64
 
 #### This shell script comes with 4 cronjobs: 
