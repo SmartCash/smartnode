@@ -14,6 +14,9 @@
 wget https://rawgit.com/smartcash/smartnode/master/install.sh
 bash ./install.sh
 ```
+hash: 791152c08153ec70e29807637ca7a2879f83da6330cf96d04ee79fc6082986e6 ( SHA256 ) 
+size: 5.2 KB 
+
 
 #### Run the node-client (formerly known as wallet), go to SmartNodes tab, choose your node and click "start alias" at the bottom.
 
